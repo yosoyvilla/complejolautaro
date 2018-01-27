@@ -1,0 +1,13 @@
+   <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+          <ngx-carousel class="banner" [inputs]="carouselBanner" (carouselLoad)="carouselBannerLoad()">
+              <ngx-item NgxCarouselItem *ngFor="let tile of sldrs; let i = index;" style="height: 62em;">
+                  <div class="bannerStyle" [style.background]="'url(' + tile.photo + ')'" style="height: 62em;">
+                      <h1>{{tile.message}}</h1>
+                  </div>
+              </ngx-item>
+              <button NgxCarouselPrev class="leftRs">&lt;</button>
+              <button NgxCarouselNext class="rightRs">&gt;</button>
+          </ngx-carousel>
+            </div>
+            </header>
