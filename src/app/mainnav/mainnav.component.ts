@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { navigation } from '../classes/nav';
+import { NAVTABS } from '../mocks/mock-nav';
+import { navigationService } from '../services/data.service';
 
 @Component({
   selector: 'app-mainnav',
   templateUrl: './mainnav.component.html',
-  styleUrls: ['./mainnav.component.css']
+  styleUrls: ['./mainnav.component.css'],
+  providers: [navigationService]
 })
 export class MainnavComponent implements OnInit {
 
-  constructor() { }
+  navTab: string;
+
+  @Input() public selectedNav: navigation = NAVTABS[0];
+
+  constructor(private navtabs: navigationService) { }
 
   ngOnInit() {
+    this.navtabs.currentTab.subscribe(navTab => this.navTab = navTab)
+  }
+
+  onSelect(nav: string): void {
+    this.navtabs.changeMessage(nav);
   }
 
 }

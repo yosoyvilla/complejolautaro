@@ -1,4 +1,4 @@
-   <header class="masthead text-center text-white d-flex">
+   <header class="masthead text-center text-white d-flex" *ngIf="navTab != undefined && navTab == '1'">
       <div class="container my-auto">
         <div class="divCarousel">
           <ngx-carousel class="banner" [inputs]="carouselBanner" style="display: list-item; margin-top: 8em;">
