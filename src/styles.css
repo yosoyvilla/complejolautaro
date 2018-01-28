@@ -208,7 +208,7 @@ header.masthead p {
 
 @media (min-width: 1200px) {
   header.masthead h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -314,4 +314,38 @@ header.masthead p {
     margin-bottom: -15%; 
     height:36em;
   }
+}
+
+.bannerStyle{
+  height: 37em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ngx-carousel .ngxcarouselPointDefault {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+ngx-carousel .ngxcarouselPoint li {
+  transform: scale(1);
+}
+
+ngx-carousel  button {
+  border: none;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 999%;
+  margin: auto;
+}
+
+ngx-carousel button[NgxCarouselPrev] {
+  left: -4em;
+}
+ngx-carousel button[NgxCarouselNext] {
+  right: -4em;
 }

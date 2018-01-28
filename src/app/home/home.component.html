@@ -1,13 +1,17 @@
    <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
-          <ngx-carousel class="banner" [inputs]="carouselBanner" (carouselLoad)="carouselBannerLoad()">
-              <ngx-item NgxCarouselItem *ngFor="let tile of sldrs; let i = index;" style="height: 62em;">
-                  <div class="bannerStyle" [style.background]="'url(' + tile.photo + ')'" style="height: 62em;">
-                      <h1>{{tile.message}}</h1>
+        <div class="divCarousel">
+          <ngx-carousel class="banner" [inputs]="carouselBanner" style="display: list-item; margin-top: 8em;">
+              <ngx-item NgxCarouselItem *ngFor="let tile of sldrs; let i = index;" style="height: 37em;">
+                  <div class="bannerStyle" [style.background]="'url(' + tile.photo + ')'">
+                    <div>
+                      <h1>{{tile.message | uppercase}}</h1>
+                    </div>
                   </div>
               </ngx-item>
               <button NgxCarouselPrev class="leftRs">&lt;</button>
               <button NgxCarouselNext class="rightRs">&gt;</button>
           </ngx-carousel>
+        </div>
             </div>
             </header>
