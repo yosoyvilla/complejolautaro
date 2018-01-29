@@ -10,3 +10,8 @@ before_script:
    - npm install -g @angular/cli
 script:
    - ng build --prod
+deploy:
+  provider: heroku
+  api_key:
+    secure: "00e6c1b3-ed8b-4c79-aa36-64a643bc4c00"
+  app: complejolautaro

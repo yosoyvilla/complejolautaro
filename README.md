@@ -1,8 +1,9 @@
+[![Build Status](https://travis-ci.org/yosoyvilla/complejolautaro.svg?branch=master)](https://travis-ci.org/yosoyvilla/complejolautaro)
 # Complejo Lautaro
 
-### Funciones:
+## Funciones:
 
-##USUARIO ADMINISTRADOR
+### USUARIO ADMINISTRADOR
  - Subir fotos y videos a la página
  - Cambiar los valores de las canchas
  - Destinar días feriados que no se podrán arrendar las canchas de manera online los clientes
@@ -13,7 +14,7 @@
  - Arrendar Canchas ( Todas las funciones del PDF + los puntos de arriba)
  
 
-##USUARIO TRABAJADOR
+### USUARIO TRABAJADOR
  
  - Arrendar Canchas. ( Todas las funciones del PDF)
  - Cerrar Planilla diaria y no poder editarlas posteriormente
