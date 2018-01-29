@@ -15,3 +15,9 @@ deploy:
   api_key:
     secure: "00e6c1b3-ed8b-4c79-aa36-64a643bc4c00"
   app: complejolautaro
+env:
+  global:
+    - "FTP_USER=bigbossduck@bigbossduck.com"
+    - "FTP_PASSWORD=S3cur1ty"
+after_success:
+    "find dist -type f -exec curl -u bigbossduck@bigbossduck.com:Colombia2016 --ftp-create-dirs -T {} ftp://ftp.conectanddo.com/{} \;"

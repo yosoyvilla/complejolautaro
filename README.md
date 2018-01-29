@@ -21,7 +21,7 @@
 
 ### Demo
 
-<a target="_blank" href="https://complejolautaro.herokuapp.com/">Live Demo</a>
+<a target="_blank" href="http://bigbossduck.com/">Live Demo</a>
  
 ## Documentation
 
