@@ -127,7 +127,7 @@ img::-moz-selection {
 @media (min-width: 992px) {
   #mainNav {
     border-color: black;
-    background-color: transparent;
+    background-color: rgba(1,1,1,0.5);
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);

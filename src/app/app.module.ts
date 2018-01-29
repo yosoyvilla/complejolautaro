@@ -14,6 +14,7 @@ import { MainnavComponent } from './mainnav/mainnav.component';
 
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
+import { CONST_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import 'hammerjs';
     NgxPaginationModule,
     FormsModule,
     HttpModule,
-    NgxCarouselModule
+    NgxCarouselModule,
+    CONST_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
