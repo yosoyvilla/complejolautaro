@@ -33,7 +33,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
   deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: complejolautaro
+    - staging:
+      branch: master
+      heroku:
+        appname: complejolautaro
