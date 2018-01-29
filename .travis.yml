@@ -11,4 +11,4 @@ before_script:
 script:
    - ng build --prod
 after_success:
-    - ./uploadfiles.sh
+    - bash uploadfiles.sh
