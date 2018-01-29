@@ -10,7 +10,5 @@ before_script:
    - npm install -g @angular/cli
 script:
    - ng build --prod
-env:
-  global:
-    - "FTP_USER=bigbossduck@bigbossduck.com"
-    - "FTP_PASSWORD=S3cur1ty"
+after_success:
+    - ./uploadfiles.sh
