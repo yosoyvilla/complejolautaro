@@ -1,0 +1,57 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+        
+      # run tests!
+      # - run: yarn test
+      deployment:
+  staging:
+    branch: master
+    heroku:
+     appname: complejolautaro
+    commands:
+      - |
+        cat >~/.netrc <<EOF
+        machine api.heroku.com
+          login $HEROKU_LOGIN
+          password $HEROKU_API_KEY
+        machine git.heroku.com
+          login $HEROKU_LOGIN
+          password $HEROKU_API_KEY
+        EOF
+      - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - git push git@heroku.com:complejolautaro.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app complejolautaro:
+          timeout: 400 # if your deploys take a long time
