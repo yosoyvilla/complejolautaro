@@ -15,6 +15,7 @@ import { MainnavComponent } from './mainnav/mainnav.component';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { CONST_ROUTING } from './app.routing';
+import { ComplejoComponent } from './complejo/complejo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CONST_ROUTING } from './app.routing';
     NavbarComponent,
     TableComponent,
     HomeComponent,
-    MainnavComponent
+    MainnavComponent,
+    ComplejoComponent
   ],
   imports: [
     BrowserModule,
