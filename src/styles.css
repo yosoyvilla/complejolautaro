@@ -353,7 +353,7 @@ ngx-carousel button[NgxCarouselNext] {
 .jumbotron{
   width: 69em;
   height: 34em;
-  background-color: rgba(1,1,1,0.7);
+  background-color: rgba(1,1,1,0.9);
   border-radius: 2.3rem;
   border: 1px solid;
   padding: 10px;
