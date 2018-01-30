@@ -1,6 +1,6 @@
    <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
-        <div class="divCarousel">
+        <div class="divCarousel" style="margin-top: -2em;">
           <ngx-carousel class="banner" [inputs]="carouselBanner" style="display: list-item; margin-top: 8em;">
               <ngx-item NgxCarouselItem *ngFor="let tile of sldrs; let i = index;" style="height: 37em;">
                   <div class="bannerStyle" [style.background]="'url(' + tile.photo + ')'">
