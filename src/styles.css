@@ -1,7 +1,10 @@
 body,
-html {
-  width: 100%;
-  height: 100%;
+html { 
+  background: url('/assets/images/header.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -166,7 +169,7 @@ img::-moz-selection {
   }
 }
 
-header.masthead {
+/* header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
   background-image: url("/assets/images/header.jpg");
@@ -175,7 +178,7 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} */
 
 header.masthead hr {
   margin-top: 30px;
@@ -317,7 +320,9 @@ header.masthead p {
 }
 
 .bannerStyle{
-  height: 37em;
+  height: 100%;
+  width: 100%;
+  text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -333,6 +338,7 @@ ngx-carousel .ngxcarouselPoint li {
 }
 
 ngx-carousel  button {
+  opacity: 0.5;
   border: none;
   position: absolute;
   bottom: 0;
@@ -341,13 +347,6 @@ ngx-carousel  button {
   height: 50px;
   border-radius: 999%;
   margin: auto;
-}
-
-ngx-carousel button[NgxCarouselPrev] {
-  left: -4em;
-}
-ngx-carousel button[NgxCarouselNext] {
-  right: -4em;
 }
 
 .jumbotron{

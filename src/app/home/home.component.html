@@ -1,6 +1,5 @@
-   <header class="masthead text-center text-white d-flex" style="height: 100%;width: 100%;">
-      <div class="container my-auto">
-        <div class="divCarousel" style="margin-top: -2em;">
+<div class="container-fluid">
+        <div class="divCarousel" style="width: 100%;height: 100%;text-align:center;">
           <ngx-carousel class="banner" [inputs]="carouselBanner" style="display: list-item; margin-top: 8em;">
               <ngx-item NgxCarouselItem *ngFor="let tile of sldrs; let i = index;" style="height: 37em;">
                   <div class="bannerStyle" [style.background]="'url(' + tile.photo + ')'">
@@ -10,8 +9,7 @@
                   </div>
               </ngx-item>
               <button NgxCarouselPrev class="leftRs">&lt;</button>
-              <button NgxCarouselNext class="rightRs">&gt;</button>
+              <button NgxCarouselNext class="rightRs" style="margin-left: 96%;">&gt;</button>
           </ngx-carousel>
         </div>
-            </div>
-            </header>
+      </div>
