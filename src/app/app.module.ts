@@ -5,10 +5,7 @@ import { HttpModule } from '@angular/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
-import { TablesComponent } from './tables/tables.component';
 import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { TableComponent } from './table/table.component';
 import { HomeComponent } from './home/home.component';
 import { MainnavComponent } from './mainnav/mainnav.component';
 
@@ -22,10 +19,7 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TablesComponent,
     LoginComponent,
-    NavbarComponent,
-    TableComponent,
     HomeComponent,
     MainnavComponent,
     ComplejoComponent,
