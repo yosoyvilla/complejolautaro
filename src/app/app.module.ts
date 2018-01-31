@@ -17,6 +17,7 @@ import 'hammerjs';
 import { CONST_ROUTING } from './app.routing';
 import { ComplejoComponent } from './complejo/complejo.component';
 import { FooterComponent } from './footer/footer.component';
+import { UbicacionComponent } from './ubicacion/ubicacion.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     MainnavComponent,
     ComplejoComponent,
-    FooterComponent
+    FooterComponent,
+    UbicacionComponent
   ],
   imports: [
     BrowserModule,
