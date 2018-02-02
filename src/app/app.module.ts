@@ -25,6 +25,8 @@ import { ReservarComponent } from './reservar/reservar.component';
 import { CalendarModule } from 'angular-calendar';
 import { UtilsComponent } from './utils/utils.component';
 import { DtpickerComponent } from './dtpicker/dtpicker.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -38,7 +40,9 @@ registerLocaleData(localeEs);
     UbicacionComponent,
     ReservarComponent,
     UtilsComponent,
-    DtpickerComponent
+    DtpickerComponent,
+    EventosComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
