@@ -1,0 +1,43 @@
+<div class="container-fluid">
+<div class="row reservarinfo">
+    <div class="alert alert-info">
+        Seleccione un dia para reservar.
+        <strong *ngIf="clickedDate">Usted ha seleccionado este dia: {{ clickedDate | date:'medium' }}</strong>
+      </div>
+</div>
+<div class="row headerreservar">
+    <mwl-demo-utils-calendar-header
+    [(view)]="view"
+    [(viewDate)]="viewDate"
+    [locale]="locale">
+  </mwl-demo-utils-calendar-header>
+</div>
+  <div class="row reservar">
+<div [ngSwitch]="view" style="width: 100%;">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale"
+    [weekStartsOn]="weekStartsOn"
+    [weekendDays]="weekendDays"
+    (dayClicked)="clickedDate = $event.day.date">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale"
+    [weekStartsOn]="weekStartsOn"
+    [weekendDays]="weekendDays"
+    (dayHeaderClicked)="clickedDate = $event.day.date">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale">
+  </mwl-calendar-day-view>
+</div>
+  </div>
+</div>
