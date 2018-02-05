@@ -25,4 +25,5 @@
  
 ## Documentation
 
- - Para instalar en ambiente de desarrollo por favor instale angular cli, despues clone el repositorio y realice un 'npm install', para iniciar la aplicacion ejecute el comando 'ng build && npm run start' y abra en el navegador la url 'http://localhost:3000/'
+ - Para actualizar las tablas en base de datos correr 'php clwebservices/artisan migrate' 
+ - Para instalar en ambiente de desarrollo por favor instale angular cli, despues clone el repositorio y realice un 'npm install', para iniciar la aplicacion ejecute el comando 'ng build && npm run start' y abra en el navegador la url 'http://localhost:3000/'.
