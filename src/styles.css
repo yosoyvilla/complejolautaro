@@ -436,3 +436,23 @@ mwl-demo-utils-calendar-header{
   margin-left: 24%;
   margin-right: 24%;
 }
+
+.returnfromCal{
+  margin-bottom: 1em;
+    margin-left: 37em;
+    margin-right: 37em;
+    margin-top: 1em;
+    color: white;
+}
+
+.loginfrm{
+  margin-left: 33em;
+  margin-right: 33em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.bcklgn{
+  margin-top: 8em;
+  background-color: rgba(1,1,1,0.5);
+}

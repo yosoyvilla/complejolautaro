@@ -27,6 +27,8 @@ import { UtilsComponent } from './utils/utils.component';
 import { DtpickerComponent } from './dtpicker/dtpicker.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { trigger, style, animate, transition } from '@angular/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -54,6 +56,8 @@ registerLocaleData(localeEs);
     CalendarModule.forRoot(),
     NgbDatepickerModule.forRoot(),
     NgbTimepickerModule.forRoot(),
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   exports: [UtilsComponent, DtpickerComponent],
   providers: [],

@@ -1,18 +1,50 @@
 <div class="container-fluid">
-<div class="row reservarinfo">
+    <div class="row reservarinfo" [hidden]="!showFields">
+        <!-- <div class="card" style="width: 20rem;" *ngFor="let elfield of fields | paginate: { itemsPerPage: 3, currentPage: p }"> -->
+            <div class="card-deck">
+                <div class="card text-center">
+                  <img class="card-img-top" src="/assets/images/fields.jpg" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title">Cancha 1</h4>
+                    <p class="card-text">Esta es una cancha ...</p>
+                    <p class="card-text"><small class="text-muted">Ultima actualizacion: hace 3 dias</small></p>
+                    <a (click)="onSelect()" class="btn btn-primary" style="color:white">Ver Disponibilidad</a>
+                  </div>
+                </div>
+                <div class="card text-center">
+                  <img class="card-img-top" src="/assets/images/fields.jpg" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title">Cancha 2</h4>
+                    <p class="card-text">Esta es una cancha ...</p>
+                    <p class="card-text"><small class="text-muted">Ultima actualizacion: hace 3 dias</small></p>
+                    <a (click)="onSelect()" class="btn btn-primary" style="color:white">Ver Disponibilidad</a>
+                  </div>
+                </div>
+                <div class="card text-center">
+                  <img class="card-img-top" src="/assets/images/fields.jpg" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title">Cancha 3</h4>
+                    <p class="card-text">Esta es una cancha ...</p>
+                    <p class="card-text"><small class="text-muted">Ultima actualizacion: hace 3 dias</small></p>
+                    <a (click)="onSelect()" class="btn btn-primary" style="color:white">Ver Disponibilidad</a>
+                  </div>
+                </div>
+              </div>
+    </div>
+<div class="row reservarinfo" [@enterAnimation] [hidden]="!showCalendar">
     <div class="alert alert-info">
         Seleccione un dia para reservar.
         <strong *ngIf="clickedDate">Usted ha seleccionado este dia: {{ clickedDate | date:'medium' }}</strong>
       </div>
 </div>
-<div class="row headerreservar">
+<div class="row headerreservar" [@enterAnimation] [hidden]="!showCalendar">
     <mwl-demo-utils-calendar-header
     [(view)]="view"
     [(viewDate)]="viewDate"
     [locale]="locale">
   </mwl-demo-utils-calendar-header>
 </div>
-  <div class="row reservar">
+  <div class="row reservar" [@enterAnimation] [hidden]="!showCalendar">
 <div [ngSwitch]="view" style="width: 100%;">
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
@@ -39,5 +71,7 @@
     [locale]="locale">
   </mwl-calendar-day-view>
 </div>
+<br/>
+<div><a (click)="onReturn()" class="btn btn-primary returnfromCal">Regresar</a></div>
   </div>
 </div>
