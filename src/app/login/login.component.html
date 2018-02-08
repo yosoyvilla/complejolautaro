@@ -3,13 +3,18 @@
 <form class="loginfrm">
   <div class="form-group">
     <label for="exampleInputEmail1" style="color:white">Correo:</label>
-    <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+    <input type="email" [(ngModel)]="email" (ngModelChange)="dataChanged()" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" style="color:white">Password</label>
-    <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su password">
+    <input type="password" [(ngModel)]="password" (ngModelChange)="dataChanged()" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su password">
   </div>
   <button type="submit" (click)="onLogin()" class="btn btn-primary">Ingresar</button>
+  <button type="submit" class="btn btn-primary">Suscribete</button>
+  <div class="row" [hidden]="!showalert">
+    <div class="alert alert-danger" role="alert" [hidden]="!showalert">
+      El usuario y/o contraseña es incorrecto
+    </div></div>
 </form>
 </div>
 </div>

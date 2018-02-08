@@ -7,6 +7,7 @@ class User
     private $table_name = "users";
 
     // object properties
+    public $exists;
     public $email;
     public $pwd;
     public $usertype;
@@ -39,6 +40,7 @@ function readOne(){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
+    if (!$row['usertype'] == null) {
     // set values to object properties
     $this->usertype = $row['usertype'];
     $this->firstname = $row['firstname'];
@@ -46,5 +48,9 @@ function readOne(){
     $this->age = $row['age'];
     $this->gender = $row['gender'];
     $this->modified = $row['modified'];
+    $this->exists = true;
+    }else{
+      $this->exists = false;  
+    }
 }
 }

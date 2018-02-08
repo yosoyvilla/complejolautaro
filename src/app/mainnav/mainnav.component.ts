@@ -18,11 +18,6 @@ export class MainnavComponent implements OnInit {
   constructor(private navtabs: navigationService) { }
 
   ngOnInit() {
-    this.navtabs.currentTab.subscribe(navTab => this.navTab = navTab)
-  }
-
-  onSelect(nav: string): void {
-    this.navtabs.changeMessage(nav);
   }
 
 }

@@ -30,7 +30,8 @@ $user_arr = array(
     "lastname" => $user->lastname,
     "age" => $user->age,
     "gender" => $user->gender,
-    "modified" => $user->modified 
+    "modified" => $user->modified,
+    "exists" => $user->exists
 );
  
 // make it json format

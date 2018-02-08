@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReservarComponent } from './reservar/reservar.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { LoginComponent } from './login/login.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AppComponent } from './app.component';
 
 const appRoutes:Routes  = [
     //full : makes sure the path is absolute path
@@ -15,6 +17,8 @@ const appRoutes:Routes  = [
     { path: 'ubicacion', component: UbicacionComponent },
     { path: 'reservar', component: ReservarComponent},
     { path: 'eventos', component: EventosComponent},
-    { path: 'login', component: LoginComponent}
+    { path: 'login', component: LoginComponent},
+    { path: 'admindb', component: AdmindashboardComponent},
+    { path: 'loggedout', component: AdmindashboardComponent}
 ];
 export const CONST_ROUTING = RouterModule.forRoot(appRoutes);

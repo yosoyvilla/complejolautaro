@@ -29,6 +29,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -44,7 +45,8 @@ registerLocaleData(localeEs);
     UtilsComponent,
     DtpickerComponent,
     EventosComponent,
-    GalleryComponent
+    GalleryComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
