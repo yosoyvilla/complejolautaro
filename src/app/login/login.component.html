@@ -1,20 +1,57 @@
 <div class="container-fluid">
-  <div class="row bcklgn">
-<form class="loginfrm">
+  <div class="row bcklgn" *ngIf="!stcreate">
+<form class="loginfrm" *ngIf="!stcreate" [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate>
   <div class="form-group">
     <label for="exampleInputEmail1" style="color:white">Correo:</label>
-    <input type="email" [(ngModel)]="email" (ngModelChange)="dataChanged()" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+    <input type="email" formControlName="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su correo" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" style="color:white">Password</label>
-    <input type="password" [(ngModel)]="password" (ngModelChange)="dataChanged()" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su password">
+    <input type="password" formControlName="pwd" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su password" required>
   </div>
-  <button type="submit" (click)="onLogin()" class="btn btn-primary">Ingresar</button>
-  <button type="submit" class="btn btn-primary">Suscribete</button>
+  <button type="submit" class="btn btn-primary">Ingresar</button>
+  <button type="button"  style="color:white" (click)="switchToCreate()" class="btn btn-primary">Suscribete</button>
   <div class="row" [hidden]="!showalert">
     <div class="alert alert-danger" role="alert" [hidden]="!showalert">
-      El usuario y/o contraseña es incorrecto
+      {{usralert}}
     </div></div>
 </form>
 </div>
+<div class="row bckrgt" *ngIf="stcreate">
+  <form class="loginfrm" *ngIf="stcreate" [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1" style="color:white">Correo:</label>
+      <input type="email" formControlName="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color:white">Password</label>
+      <input type="password" formControlName="pwd" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su password" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputNombres" style="color:white">Nombres:</label>
+      <input type="text" class="form-control" formControlName="firstname" id="exampleInputNombres" aria-describedby="emailHelp" placeholder="Ingrese sus nombres" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputApellidos" style="color:white">Apellidos:</label>
+      <input type="text" class="form-control" formControlName="lastname" id="exampleInputApellidos" aria-describedby="emailHelp" placeholder="Ingrese sus apellidos" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEdad" style="color:white">Edad:</label>
+      <input type="text" class="form-control" formControlName="age" id="exampleInputEdad" aria-describedby="emailHelp" placeholder="Ingrese su edad" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1" style="color:white">Genero:</label>
+      <select class="form-control" formControlName="gender" id="exampleFormControlSelect1">
+        <option>Masculino</option>
+        <option>Femenino</option>
+      </select>
+    </div>
+    <button type="button" (click)="switchToLogin()" class="btn btn-primary">Cancelar</button>
+    <button type="submit" class="btn btn-primary">Suscribirse</button>
+    <div class="row" [hidden]="!showalert">
+      <div class="alert alert-danger" role="alert" [hidden]="!showalert">
+        {{usralert}}
+      </div></div>
+  </form>
+  </div>
 </div>

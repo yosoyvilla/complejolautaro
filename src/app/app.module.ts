@@ -30,6 +30,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -59,7 +60,8 @@ registerLocaleData(localeEs);
     NgbDatepickerModule.forRoot(),
     NgbTimepickerModule.forRoot(),
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    ReactiveFormsModule
   ],
   exports: [UtilsComponent, DtpickerComponent],
   providers: [],

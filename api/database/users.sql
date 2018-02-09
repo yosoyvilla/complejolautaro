@@ -37,7 +37,8 @@ CREATE TABLE `users` (
   `age` varchar(256) NOT NULL,
   `gender` varchar(256) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
