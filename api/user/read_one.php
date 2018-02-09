@@ -30,6 +30,7 @@ $user_arr = array(
     "lastname" => $user->lastname,
     "age" => $user->age,
     "gender" => $user->gender,
+    "created" => $user->created,
     "modified" => $user->modified,
     "exists" => $user->exists,
 );

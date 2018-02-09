@@ -49,6 +49,7 @@ class User
             $this->lastname = $row['lastname'];
             $this->age = $row['age'];
             $this->gender = $row['gender'];
+            $this->created = $row['created'];
             $this->modified = $row['modified'];
             $this->exists = true;
         } else {

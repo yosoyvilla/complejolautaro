@@ -7,14 +7,15 @@ import { EventosComponent } from './eventos/eventos.component';
 import { LoginComponent } from './login/login.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AppComponent } from './app.component';
+import { MaindbComponent } from './maindb/maindb.component'
 
 const appRoutes:Routes  = [
     //full : makes sure the path is absolute path
-    { path: '*', redirectTo: '/home', pathMatch: 'full' },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'complejo', component: ComplejoComponent },
-    { path: 'ubicacion', component: UbicacionComponent },
+    { path: '*', redirectTo: '/home', pathMatch: 'full'},
+    { path: '', redirectTo: '/home', pathMatch: 'full'},
+    { path: 'home', component: HomeComponent},
+    { path: 'complejo', component: ComplejoComponent},
+    { path: 'ubicacion', component: UbicacionComponent},
     { path: 'reservar', component: ReservarComponent},
     { path: 'eventos', component: EventosComponent},
     { path: 'login', component: LoginComponent},

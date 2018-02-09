@@ -3,12 +3,14 @@ import { ApiService } from '../services/auth.service';
 import { navigationService } from '../services/data.service';
 import {ActivatedRoute, RouterModule, Router} from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [ApiService]
+  providers: [ApiService, UserService, navigationService]
 })
 export class LoginComponent implements OnInit {
 
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
     age: new FormControl(),
     gender: new FormControl(),
   });
+
+  UserM: User = new User;
 
   EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
@@ -48,7 +52,7 @@ export class LoginComponent implements OnInit {
 
   showalert: boolean = false;
 
-  constructor(private auth: ApiService, private navservice: navigationService, private router: Router) { }
+  constructor(private auth: ApiService, private navservice: navigationService, private router: Router, private users: UserService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -66,6 +70,15 @@ export class LoginComponent implements OnInit {
           if(authResponse.exists === false){
             this.showalert = true;
           }else{
+            this.UserM.email = authResponse.email;
+            this.UserM.usertype = authResponse.usertype;
+            this.UserM.firstname = authResponse.firstname;
+            this.UserM.lastname = authResponse.lastname;
+            this.UserM.age = authResponse.age;
+            this.UserM.gender = authResponse.gender;
+            this.UserM.created = authResponse.created;
+            this.UserM.modified = authResponse.modified;
+            this.users.changeUser(this.UserM);
             localStorage.setItem('logged', 'true');
             this.router.navigateByUrl('/admindb');
             this.navservice.changeMessage(false);
@@ -90,6 +103,7 @@ export class LoginComponent implements OnInit {
             this.usralert = "No se pudo crear el usuario.";
             this.showalert = true;
           }else{
+            this.users.changeUser(this.UserM);
             localStorage.setItem('logged', 'true');
             this.router.navigateByUrl('/admindb');
             this.navservice.changeMessage(false);

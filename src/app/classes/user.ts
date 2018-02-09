@@ -1,9 +1,10 @@
 export class User {
     email: string;
-    password: string;
+    usertype: string;
     firstname: string;
     lastname: string;
     age: string;
     gender: string;
+    modified: string;
     created: string;
 }

@@ -31,6 +31,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaindbComponent } from './maindb/maindb.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -47,7 +48,8 @@ registerLocaleData(localeEs);
     DtpickerComponent,
     EventosComponent,
     GalleryComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    MaindbComponent
   ],
   imports: [
     BrowserModule,
