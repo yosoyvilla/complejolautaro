@@ -31,4 +31,22 @@ export class ApiService {
   //     options
   // );
 }
+
+    // Send user data to remote server to create it.
+    update(user): Observable<any>{
+ 
+      let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+      let options: RequestOptions = new RequestOptions({ headers: headers });
+    
+      return this._http.post(
+          "http://localhost:8888/clws/user/update.php",
+          user,
+          options
+      );
+      //   return this._http.post(
+      //     "http://bigbossduck.com/api/user/update.php",
+      //     user,
+      //     options
+      // );
+    }
 }

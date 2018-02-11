@@ -59,7 +59,7 @@ class User
         }
     }
 
-// create product
+// create user
     public function create()
     {
         //try {
@@ -74,6 +74,27 @@ class User
         }
 
         return false;
+        // } catch (Exception $e) {
+        //     return $e->getMessage();
+        // }
+
+    }
+
+    // create user
+    public function update()
+    {
+        //try {
+        // query to insert record
+        $query = "UPDATE ".$this->table_name." SET password='".$this->pwd."', firstname='".$this->firstname."', lastname='".$this->lastname."', age='".$this->age."', gender='".$this->gender."', phone='".$this->phone."', modified='".date('Y-m-d H:i:s')."' WHERE email='".$this->email."'";
+        // prepare query
+        // return $query;
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        if ($stmt->execute()) {
+            return $query;
+        }
+
+        return $query;
         // } catch (Exception $e) {
         //     return $e->getMessage();
         // }

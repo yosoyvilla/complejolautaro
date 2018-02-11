@@ -45,45 +45,57 @@
     </ol>
     <!-- Icon Cards-->
     <div class="row" style="width: 100%;">
-      <form class="" [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
+      <form class="" style="margin-left: 2em;" [formGroup]="updateForm" (ngSubmit)="onSaveChanges()" novalidate>
         <div class="form-group row">
           <label for="firstname-input" class="col-2 col-form-label" style="width: 20em;">Nombres: </label>
           <div class="col-10">
-            <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.firstname}}" id="firstname-input">
+            <input class="form-control" formControlName="firstname" type="text" [readonly]="!editUser" value="{{this.UserM.firstname}}" id="firstname-input">
           </div>
         </div>
         <div class="form-group row">
           <label for="lastname-input" class="col-2 col-form-label" style="width: 20em;">Apellidos: </label>
           <div class="col-10">
-            <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.lastname}}" id="lastname-input">
+            <input class="form-control" type="text" formControlName="lastname" [readonly]="!editUser" value="{{this.UserM.lastname}}" id="lastname-input">
           </div>
         </div>
         <div class="form-group row">
           <label for="tel-input" class="col-2 col-form-label" style="width: 20em;">Telefono: </label>
           <div class="col-10">
-            <input class="form-control" type="tel" [readonly]="!editUser" value="{{this.UserM.phone}}" id="tel-input">
+            <input class="form-control" type="tel" formControlName="phone" [readonly]="!editUser" value="{{this.UserM.phone}}" id="tel-input">
           </div>
         </div>
         <div class="form-group row">
           <label for="password-input" class="col-2 col-form-label" style="width: 20em;">Password: </label>
           <div class="col-10">
-            <input class="form-control" type="password" [readonly]="!editUser" value="*************" id="password-input">
+            <input class="form-control" type="password" formControlName="password" [readonly]="!editUser" value="*************" id="password-input">
           </div>
         </div>
         <div class="form-group row">
           <label for="age-input" class="col-2 col-form-label" style="width: 20em;">Edad: </label>
           <div class="col-10">
-            <input class="form-control" type="number" [readonly]="!editUser" value="{{this.UserM.age}}" id="age-input">
+            <input class="form-control" type="number" formControlName="age" [readonly]="!editUser" value="{{this.UserM.age}}" id="age-input">
           </div>
         </div>
         <div class="form-group row">
           <label for="exampleFormControlSelect1" class="col-2 col-form-label" style="width: 20em;">Genero:</label>
           <div class="col-10">
-          <select class="form-control" formControlName="gender" id="exampleFormControlSelect1">
+            <input class="form-control" *ngIf="!editUser" formControlName="gender" type="text" [readonly]="!editUser" value="{{this.UserM.gender}}" id="exampleFormControlSelect1">
+          <select class="form-control" *ngIf="editUser" formControlName="gender" id="exampleFormControlSelect1">
             <option>Masculino</option>
             <option>Femenino</option>
           </select>
         </div>
+        </div>
+        <div class="form-group row">
+            <div class="alert alert-danger" *ngIf="errorSaving" role="alert">
+                <strong>Oops!</strong> {{errorMessage}}
+              </div>
+        </div>
+        <div class="form-group row">
+            <button type="button" class="btn btn-danger">Eliminar Usuario</button>
+            <button type="button" (click)="onCancelUser()" *ngIf="editUser" class="btn btn-info">Cancelar Cambios</button>
+            <button type="button" (click)="onEditUser()" *ngIf="!editUser" class="btn btn-primary">Editar Usuario</button>
+            <button type="submit" *ngIf="editUser" class="btn btn-success">Guardar Cambios</button>
         </div>
       </form>
       </div>
