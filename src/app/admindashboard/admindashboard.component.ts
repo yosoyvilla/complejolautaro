@@ -30,6 +30,7 @@ export class AdmindashboardComponent implements OnInit {
       this.UserM.lastname = localStorage.getItem('lastname');
       this.UserM.age = localStorage.getItem('age');
       this.UserM.gender = localStorage.getItem('gender');
+      this.UserM.phone = localStorage.getItem('phone');
       this.UserM.created = localStorage.getItem('created');
       this.UserM.modified = localStorage.getItem('modified');
     }else{

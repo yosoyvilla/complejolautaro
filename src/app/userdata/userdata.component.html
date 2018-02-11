@@ -44,44 +44,46 @@
       <li class="breadcrumb-item active">Home</li>
     </ol>
     <!-- Icon Cards-->
-    <div class="row">
+    <div class="row" style="width: 100%;">
       <form class="" [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
         <div class="form-group row">
-          <label for="firstname-input" class="col-2 col-form-label">Nombres: </label>
+          <label for="firstname-input" class="col-2 col-form-label" style="width: 20em;">Nombres: </label>
           <div class="col-10">
             <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.firstname}}" id="firstname-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="lastname-input" class="col-2 col-form-label">Apellidos: </label>
+          <label for="lastname-input" class="col-2 col-form-label" style="width: 20em;">Apellidos: </label>
           <div class="col-10">
             <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.lastname}}" id="lastname-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="tel-input" class="col-2 col-form-label">Telefono: </label>
+          <label for="tel-input" class="col-2 col-form-label" style="width: 20em;">Telefono: </label>
           <div class="col-10">
             <input class="form-control" type="tel" [readonly]="!editUser" value="{{this.UserM.phone}}" id="tel-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="password-input" class="col-2 col-form-label">Password: </label>
+          <label for="password-input" class="col-2 col-form-label" style="width: 20em;">Password: </label>
           <div class="col-10">
-            <input class="form-control" type="password" value="*************" id="password-input">
+            <input class="form-control" type="password" [readonly]="!editUser" value="*************" id="password-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="age-input" class="col-2 col-form-label">Edad: </label>
+          <label for="age-input" class="col-2 col-form-label" style="width: 20em;">Edad: </label>
           <div class="col-10">
-            <input class="form-control" type="number" value="42" id="age-input">
+            <input class="form-control" type="number" [readonly]="!editUser" value="{{this.UserM.age}}" id="age-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="exampleFormControlSelect1" style="color:white">Genero:</label>
+          <label for="exampleFormControlSelect1" class="col-2 col-form-label" style="width: 20em;">Genero:</label>
+          <div class="col-10">
           <select class="form-control" formControlName="gender" id="exampleFormControlSelect1">
             <option>Masculino</option>
             <option>Femenino</option>
           </select>
+        </div>
         </div>
       </form>
       </div>

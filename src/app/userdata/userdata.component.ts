@@ -20,6 +20,7 @@ export class UserdataComponent implements OnInit {
     lastname: new FormControl(),
     age: new FormControl(),
     gender: new FormControl(),
+    phone: new FormControl()
   });
 
   currentT: boolean;
@@ -36,14 +37,15 @@ export class UserdataComponent implements OnInit {
       this.router.navigateByUrl('/userdata');
       this.navservice.changeMessage(false);
       window.scrollTo(0, 0);
-      this.UserM.email = "email";
-      this.UserM.usertype = "ut";
-      this.UserM.firstname = "firstname";
-      this.UserM.lastname = "lastname";
-      this.UserM.age = "age";
-      this.UserM.gender = "gender";
-      this.UserM.created = "created";
-      this.UserM.modified = "modified";
+      this.UserM.email = localStorage.getItem('email');
+      this.UserM.usertype = localStorage.getItem('ut');
+      this.UserM.firstname = localStorage.getItem('firstname');
+      this.UserM.lastname = localStorage.getItem('lastname');
+      this.UserM.age = localStorage.getItem('age');
+      this.UserM.gender = localStorage.getItem('gender');
+      this.UserM.phone = localStorage.getItem('phone');
+      this.UserM.created = localStorage.getItem('created');
+      this.UserM.modified = localStorage.getItem('modified');
     }else{
       this.navservice.currentTemplate.subscribe(curent => this.currentT = curent);
       this.onLogOut();
@@ -57,6 +59,7 @@ export class UserdataComponent implements OnInit {
     localStorage.removeItem('lastname');
     localStorage.removeItem('age');
     localStorage.removeItem('gender');
+    localStorage.removeItem('phone');
     localStorage.removeItem('created');
     localStorage.removeItem('modified');
     localStorage.setItem('logged', 'false');
