@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <a class="navbar-brand">Bienvenido {{UserM.firstname}}!</a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" [routerLink]="['/admindb']">
+          <i class="fa fa-fw fa-dashboard" ></i>
+          <span class="nav-link-text" >Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" [routerLink]="['/userdata']">
+        <i class="fa fa-fw fa-user-circle"></i>
+          <span class="nav-link-text">Mi Usuario</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item">
+        <a class="nav-link text-center" id="sidenavToggler">
+          <i class="fa fa-fw fa-angle-left"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active">Home</li>
+    </ol>
+    <!-- Icon Cards-->
+    <div class="row">
+      <form class="" [formGroup]="registerForm" (ngSubmit)="onRegister()" novalidate>
+        <div class="form-group row">
+          <label for="firstname-input" class="col-2 col-form-label">Nombres: </label>
+          <div class="col-10">
+            <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.firstname}}" id="firstname-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lastname-input" class="col-2 col-form-label">Apellidos: </label>
+          <div class="col-10">
+            <input class="form-control" type="text" [readonly]="!editUser" value="{{this.UserM.lastname}}" id="lastname-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tel-input" class="col-2 col-form-label">Telefono: </label>
+          <div class="col-10">
+            <input class="form-control" type="tel" [readonly]="!editUser" value="{{this.UserM.phone}}" id="tel-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="password-input" class="col-2 col-form-label">Password: </label>
+          <div class="col-10">
+            <input class="form-control" type="password" value="*************" id="password-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="age-input" class="col-2 col-form-label">Edad: </label>
+          <div class="col-10">
+            <input class="form-control" type="number" value="42" id="age-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="exampleFormControlSelect1" style="color:white">Genero:</label>
+          <select class="form-control" formControlName="gender" id="exampleFormControlSelect1">
+            <option>Masculino</option>
+            <option>Femenino</option>
+          </select>
+        </div>
+      </form>
+      </div>
+  </div>
+  <!-- /.container-fluid-->
+  <!-- /.content-wrapper-->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>Copyright © Connectando 2018</small>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea cerrar sesion?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Seleccione "Salir" para cerrar sesion.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" (click)="onLogOut()" >Salir</a>
+        </div>
+      </div>
+    </div>
+  </div>

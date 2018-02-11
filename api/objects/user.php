@@ -15,6 +15,7 @@ class User
     public $lastname;
     public $age;
     public $gender;
+    public $phone;
     public $created;
     public $modified;
 
@@ -29,7 +30,7 @@ class User
     {
 
         // select all query
-        $query = "SELECT `id`, `email`, `password`, `usertype`, `firstname`, `lastname`, `age`, `gender`, `created`, `modified`
+        $query = "SELECT `id`, `email`, `password`, `usertype`, `firstname`, `lastname`, `age`, `gender`, `phone`, `created`, `modified`
             FROM
                 " . $this->table_name . " WHERE email = '" . $this->email . "' AND password = '" . $this->pwd . "'";
 
@@ -49,6 +50,7 @@ class User
             $this->lastname = $row['lastname'];
             $this->age = $row['age'];
             $this->gender = $row['gender'];
+            $this->phone = $row['phone'];
             $this->created = $row['created'];
             $this->modified = $row['modified'];
             $this->exists = true;
@@ -62,7 +64,7 @@ class User
     {
         //try {
         // query to insert record
-        $query = "INSERT INTO " . $this->table_name . " SET email='".$this->email."', password='".$this->pwd."', usertype=2, firstname='".$this->firstname."', lastname='".$this->lastname."', age='".$this->age."', gender='".$this->gender."', created='".date('Y-m-d H:i:s')."', modified='".date('Y-m-d H:i:s')."'";
+        $query = "INSERT INTO " . $this->table_name . " SET email='".$this->email."', password='".$this->pwd."', usertype=2, firstname='".$this->firstname."', lastname='".$this->lastname."', age='".$this->age."', gender='".$this->gender."', phone='".$this->phone."', created='".date('Y-m-d H:i:s')."', modified='".date('Y-m-d H:i:s')."'";
         // prepare query
         // return $query;
         $stmt = $this->conn->prepare($query);

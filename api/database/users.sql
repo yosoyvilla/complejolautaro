@@ -36,6 +36,7 @@ CREATE TABLE `users` (
   `lastname` varchar(256) NOT NULL,
   `age` varchar(256) NOT NULL,
   `gender` varchar(256) NOT NULL,
+  `phone` varchar(256) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (`email`)
@@ -45,8 +46,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `usertype`, `firstname`, `lastname`, `age`, `gender`, `created`, `modified`) VALUES
-(1, 'admin@admin.com', 'complejo2018', 1, 'firstname', 'lastname', '22', 'Male', '2014-06-01 00:35:07', '2014-05-30 22:34:33');
+INSERT INTO `users` (`id`, `email`, `password`, `usertype`, `firstname`, `lastname`, `age`, `gender`, `phone`, `created`, `modified`) VALUES
+(1, 'admin@admin.com', 'complejo2018', 1, 'firstname', 'lastname', '22', 'Male', '3018956482', '2014-06-01 00:35:07', '2014-05-30 22:34:33');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

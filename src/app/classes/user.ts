@@ -7,4 +7,5 @@ export class User {
     gender: string;
     modified: string;
     created: string;
+    phone: string;
 }

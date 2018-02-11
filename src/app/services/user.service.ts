@@ -4,11 +4,11 @@ import { User } from '../classes/user';
 
 @Injectable()
 export class UserService {
-  UserM: User = new User;
-  private userModel = new BehaviorSubject<User>(this.UserM);
+  private userModel = new BehaviorSubject<User>(new User);
   currentUser = this.userModel.asObservable();
   constructor() { }
   changeUser(user: User) {
-    this.userModel.next(user)
+    console.log(user.email);
+    this.userModel.next(user);
   }
 }

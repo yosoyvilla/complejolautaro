@@ -32,6 +32,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaindbComponent } from './maindb/maindb.component';
+import { UserdataComponent } from './userdata/userdata.component';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -49,7 +50,8 @@ registerLocaleData(localeEs);
     EventosComponent,
     GalleryComponent,
     AdmindashboardComponent,
-    MaindbComponent
+    MaindbComponent,
+    UserdataComponent
   ],
   imports: [
     BrowserModule,

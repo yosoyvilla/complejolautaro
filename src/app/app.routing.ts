@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AppComponent } from './app.component';
 import { MaindbComponent } from './maindb/maindb.component'
+import { UserdataComponent } from './userdata/userdata.component';
 
 const appRoutes:Routes  = [
     //full : makes sure the path is absolute path
@@ -20,6 +21,7 @@ const appRoutes:Routes  = [
     { path: 'eventos', component: EventosComponent},
     { path: 'login', component: LoginComponent},
     { path: 'admindb', component: AdmindashboardComponent},
-    { path: 'loggedout', component: AdmindashboardComponent}
+    { path: 'loggedout', component: AdmindashboardComponent},
+    { path: 'userdata', component: UserdataComponent}
 ];
 export const CONST_ROUTING = RouterModule.forRoot(appRoutes);

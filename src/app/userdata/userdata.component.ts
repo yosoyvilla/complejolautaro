@@ -3,16 +3,28 @@ import { navigationService } from '../services/data.service';
 import {ActivatedRoute, RouterModule, Router} from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../classes/user';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-admindashboard',
-  templateUrl: './admindashboard.component.html',
-  styleUrls: ['./admindashboard.component.css'],
+  selector: 'app-userdata',
+  templateUrl: './userdata.component.html',
+  styleUrls: ['./userdata.component.css'],
   providers: [UserService, navigationService]
 })
-export class AdmindashboardComponent implements OnInit {
+export class UserdataComponent implements OnInit {
+
+  registerForm = new FormGroup ({
+    email: new FormControl(),
+    pwd: new FormControl(),
+    firstname: new FormControl(),
+    lastname: new FormControl(),
+    age: new FormControl(),
+    gender: new FormControl(),
+  });
 
   currentT: boolean;
+
+  editUser: boolean = false;
 
   UserM: User = new User;
 
@@ -21,17 +33,17 @@ export class AdmindashboardComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem('logged') === 'true'){
       this.navservice.currentTemplate.subscribe(curent => this.currentT = curent);
-      this.router.navigateByUrl('/admindb');
+      this.router.navigateByUrl('/userdata');
       this.navservice.changeMessage(false);
       window.scrollTo(0, 0);
-      this.UserM.email = localStorage.getItem('email');
-      this.UserM.usertype = localStorage.getItem('ut');
-      this.UserM.firstname = localStorage.getItem('firstname');
-      this.UserM.lastname = localStorage.getItem('lastname');
-      this.UserM.age = localStorage.getItem('age');
-      this.UserM.gender = localStorage.getItem('gender');
-      this.UserM.created = localStorage.getItem('created');
-      this.UserM.modified = localStorage.getItem('modified');
+      this.UserM.email = "email";
+      this.UserM.usertype = "ut";
+      this.UserM.firstname = "firstname";
+      this.UserM.lastname = "lastname";
+      this.UserM.age = "age";
+      this.UserM.gender = "gender";
+      this.UserM.created = "created";
+      this.UserM.modified = "modified";
     }else{
       this.navservice.currentTemplate.subscribe(curent => this.currentT = curent);
       this.onLogOut();
@@ -52,5 +64,6 @@ export class AdmindashboardComponent implements OnInit {
     this.navservice.changeMessage(true);
     window.location.reload();
   }
+
 
 }

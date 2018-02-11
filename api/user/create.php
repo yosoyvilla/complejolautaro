@@ -27,6 +27,7 @@ $user->firstname = $data->firstname;
 $user->lastname = $data->lastname;
 $user->age = $data->age;
 $user->gender = $data->gender;
+$user->phone = $data->phone;
 
 $exct = $user->create();
 
